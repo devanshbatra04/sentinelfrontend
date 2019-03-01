@@ -7,10 +7,14 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import json,urllib.request
+import requests
+
 
 class Ui_BaseScreen(object):
     def setupUi(self, BaseScreen):
         BaseScreen.setObjectName("BaseScreen")
+        self.output = requests.post('http://127.0.0.1:5000/getProcesses').json()
         BaseScreen.resize(1290, 775)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -468,27 +472,8 @@ class Ui_BaseScreen(object):
         self.tableWidget.setHorizontalHeaderItem(5, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(6, item)
-        item = QtWidgets.QTableWidgetItem()
-        brush = QtGui.QBrush(QtGui.QColor(186, 189, 182))
-        brush.setStyle(QtCore.Qt.NoBrush)
-        item.setBackground(brush)
-        brush = QtGui.QBrush(QtGui.QColor(46, 52, 54))
-        brush.setStyle(QtCore.Qt.NoBrush)
-        item.setForeground(brush)
-        item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsEnabled)
-        self.tableWidget.setItem(0, 0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setItem(0, 1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setItem(0, 2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setItem(0, 3, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setItem(0, 4, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setItem(0, 5, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setItem(0, 6, item)
+
+        self.retranslateTable(BaseScreen)
         self.tableWidget.horizontalHeader().setVisible(True)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
         self.tableWidget.horizontalHeader().setHighlightSections(False)
@@ -671,20 +656,6 @@ class Ui_BaseScreen(object):
         item.setText(_translate("BaseScreen", "Remote Location"))
         __sortingEnabled = self.tableWidget.isSortingEnabled()
         self.tableWidget.setSortingEnabled(False)
-        item = self.tableWidget.item(0, 0)
-        item.setText(_translate("BaseScreen", "100"))
-        item = self.tableWidget.item(0, 1)
-        item.setText(_translate("BaseScreen", "Admin"))
-        item = self.tableWidget.item(0, 2)
-        item.setText(_translate("BaseScreen", "Kakarot.py"))
-        item = self.tableWidget.item(0, 3)
-        item.setText(_translate("BaseScreen", "9900"))
-        item = self.tableWidget.item(0, 4)
-        item.setText(_translate("BaseScreen", "127.0.01"))
-        item = self.tableWidget.item(0, 5)
-        item.setText(_translate("BaseScreen", "142.12.1.100"))
-        item = self.tableWidget.item(0, 6)
-        item.setText(_translate("BaseScreen", "Newzealand"))
         self.tableWidget.setSortingEnabled(__sortingEnabled)
         self.label_30.setText(_translate("BaseScreen", "Overview"))
         self.label_31.setText(_translate("BaseScreen", "Number of Processes:"))
@@ -699,6 +670,50 @@ class Ui_BaseScreen(object):
         self.rkhunterButton.setText(_translate("BaseScreen", "Run RKHunter"))
         self.advancedScanButton.setText(_translate("BaseScreen", "Get Advance Scan Reports"))
         self.blockedIPButton.setText(_translate("BaseScreen", "Manage Blocked IPs"))
+
+
+
+    def retranslateTable(self,BaseScreen):
+        print(self.output)
+        _translate = QtCore.QCoreApplication.translate
+        for i in range(len(self.output['processes'])):
+                item = QtWidgets.QTableWidgetItem()
+                brush = QtGui.QBrush(QtGui.QColor(186, 189, 182))
+                brush.setStyle(QtCore.Qt.NoBrush)
+                item.setBackground(brush)
+                brush = QtGui.QBrush(QtGui.QColor(46, 52, 54))
+                brush.setStyle(QtCore.Qt.NoBrush)
+                item.setForeground(brush)
+                item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsEnabled)
+                self.tableWidget.setItem(i, 0, item)
+                item = QtWidgets.QTableWidgetItem()
+                self.tableWidget.setItem(i, 1, item)
+                item = QtWidgets.QTableWidgetItem()
+                self.tableWidget.setItem(i, 2, item)
+                item = QtWidgets.QTableWidgetItem()
+                self.tableWidget.setItem(i, 3, item)
+                item = QtWidgets.QTableWidgetItem()
+                self.tableWidget.setItem(i, 4, item)
+                item = QtWidgets.QTableWidgetItem()
+                self.tableWidget.setItem(i, 5, item)
+                item = QtWidgets.QTableWidgetItem()
+                self.tableWidget.setItem(i, 6, item)
+        
+                item = self.tableWidget.item(i, 0)
+                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["PID"]) if len(self.output["processes"][i]["PID"]) else "Not Found"))
+                item = self.tableWidget.item(i, 1)
+                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["User"]) if len(self.output["processes"][i]["User"]) else "Not Found"))
+                item = self.tableWidget.item(i, 2)
+                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["Pname"]) if len(self.output["processes"][i]["Pname"]) else "Not Found"))
+                item = self.tableWidget.item(i, 3)
+                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["localAddr"][1]) if len(self.output["processes"][i]["localAddr"]) else "Not Found"))
+                item = self.tableWidget.item(i, 4)
+                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["localAddr"][0]) if len(self.output["processes"][i]["localAddr"]) else "Not Found"))
+                item = self.tableWidget.item(i, 5)
+                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["remoteAddr"][0]) if len(self.output["processes"][i]["remoteAddr"]) else "Not Found"))
+                item = self.tableWidget.item(i, 6)
+                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["country"]) if len(self.output["processes"][i]["country"]) else "Not Found"))
+
 
 
 if __name__ == "__main__":
