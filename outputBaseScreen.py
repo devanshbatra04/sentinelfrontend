@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import json,urllib.request
+import json, urllib.request
 import requests
 
 
@@ -45,16 +45,16 @@ class Ui_BaseScreen(object):
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setGeometry(QtCore.QRect(0, 80, 311, 3))
         self.frame_2.setStyleSheet("border: 0.5px solid white;\n"
-"background-color: rgb(238, 238, 236);\n"
-"border-style: inset;")
+                                   "background-color: rgb(238, 238, 236);\n"
+                                   "border-style: inset;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.frame_4 = QtWidgets.QFrame(self.frame_2)
         self.frame_4.setGeometry(QtCore.QRect(0, 0, 311, 3))
         self.frame_4.setStyleSheet("border: 0.5px solid white;\n"
-"background-color: rgb(238, 238, 236);\n"
-"border-style: inset;")
+                                   "background-color: rgb(238, 238, 236);\n"
+                                   "border-style: inset;")
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
@@ -71,7 +71,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_4.setFont(font)
         self.label_4.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                   "font-weight: 700;")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.frame)
         self.label_5.setGeometry(QtCore.QRect(70, 30, 211, 41))
@@ -80,7 +80,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                   "font-weight: 700;")
         self.label_5.setObjectName("label_5")
         self.label_6 = QtWidgets.QLabel(self.frame)
         self.label_6.setGeometry(QtCore.QRect(10, 90, 241, 41))
@@ -89,7 +89,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_6.setFont(font)
         self.label_6.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                   "font-weight: 700;")
         self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(self.frame)
         self.label_7.setGeometry(QtCore.QRect(20, 120, 221, 41))
@@ -98,7 +98,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_7.setFont(font)
         self.label_7.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                   "font-weight: 700;")
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(self.frame)
         self.label_8.setGeometry(QtCore.QRect(20, 150, 221, 41))
@@ -107,7 +107,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_8.setFont(font)
         self.label_8.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                   "font-weight: 700;")
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.frame)
         self.label_9.setGeometry(QtCore.QRect(20, 180, 81, 41))
@@ -116,7 +116,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_9.setFont(font)
         self.label_9.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                   "font-weight: 700;")
         self.label_9.setObjectName("label_9")
         self.processStartTime = QtWidgets.QLabel(self.frame)
         self.processStartTime.setGeometry(QtCore.QRect(120, 180, 111, 41))
@@ -125,7 +125,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.processStartTime.setFont(font)
         self.processStartTime.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                            "font-weight: 700;")
         self.processStartTime.setObjectName("processStartTime")
         self.processType = QtWidgets.QLabel(self.frame)
         self.processType.setGeometry(QtCore.QRect(120, 150, 131, 41))
@@ -134,7 +134,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.processType.setFont(font)
         self.processType.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                       "font-weight: 700;")
         self.processType.setObjectName("processType")
         self.processName = QtWidgets.QLabel(self.frame)
         self.processName.setGeometry(QtCore.QRect(120, 120, 91, 41))
@@ -143,7 +143,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.processName.setFont(font)
         self.processName.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                       "font-weight: 700;")
         self.processName.setObjectName("processName")
         self.label_13 = QtWidgets.QLabel(self.frame)
         self.label_13.setGeometry(QtCore.QRect(10, 220, 221, 41))
@@ -152,7 +152,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_13.setFont(font)
         self.label_13.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_13.setObjectName("label_13")
         self.label_14 = QtWidgets.QLabel(self.frame)
         self.label_14.setGeometry(QtCore.QRect(10, 260, 221, 41))
@@ -161,7 +161,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_14.setFont(font)
         self.label_14.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_14.setObjectName("label_14")
         self.label_15 = QtWidgets.QLabel(self.frame)
         self.label_15.setGeometry(QtCore.QRect(10, 290, 221, 41))
@@ -170,7 +170,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_15.setFont(font)
         self.label_15.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_15.setObjectName("label_15")
         self.label_16 = QtWidgets.QLabel(self.frame)
         self.label_16.setGeometry(QtCore.QRect(10, 320, 221, 41))
@@ -179,7 +179,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_16.setFont(font)
         self.label_16.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_16.setObjectName("label_16")
         self.label_17 = QtWidgets.QLabel(self.frame)
         self.label_17.setGeometry(QtCore.QRect(10, 560, 241, 41))
@@ -188,7 +188,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_17.setFont(font)
         self.label_17.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_17.setObjectName("label_17")
         self.processCPU = QtWidgets.QLabel(self.frame)
         self.processCPU.setGeometry(QtCore.QRect(130, 660, 111, 41))
@@ -197,7 +197,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.processCPU.setFont(font)
         self.processCPU.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                      "font-weight: 700;")
         self.processCPU.setObjectName("processCPU")
         self.label_19 = QtWidgets.QLabel(self.frame)
         self.label_19.setGeometry(QtCore.QRect(30, 600, 221, 41))
@@ -206,7 +206,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_19.setFont(font)
         self.label_19.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_19.setObjectName("label_19")
         self.processDisk = QtWidgets.QLabel(self.frame)
         self.processDisk.setGeometry(QtCore.QRect(130, 600, 91, 41))
@@ -215,7 +215,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.processDisk.setFont(font)
         self.processDisk.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                       "font-weight: 700;")
         self.processDisk.setObjectName("processDisk")
         self.label_21 = QtWidgets.QLabel(self.frame)
         self.label_21.setGeometry(QtCore.QRect(30, 660, 81, 41))
@@ -224,7 +224,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_21.setFont(font)
         self.label_21.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_21.setObjectName("label_21")
         self.label_23 = QtWidgets.QLabel(self.frame)
         self.label_23.setGeometry(QtCore.QRect(30, 630, 221, 41))
@@ -233,7 +233,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_23.setFont(font)
         self.label_23.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_23.setObjectName("label_23")
         self.processNetwork = QtWidgets.QLabel(self.frame)
         self.processNetwork.setGeometry(QtCore.QRect(130, 630, 131, 41))
@@ -242,27 +242,27 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.processNetwork.setFont(font)
         self.processNetwork.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                          "font-weight: 700;")
         self.processNetwork.setObjectName("processNetwork")
         self.pushButton = QtWidgets.QPushButton(self.frame)
         self.pushButton.setGeometry(QtCore.QRect(10, 420, 271, 41))
         self.pushButton.setStyleSheet("background-color: rgb(231, 231, 231);\n"
-"color: rgb(89, 89, 89);")
+                                      "color: rgb(89, 89, 89);")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.frame)
         self.pushButton_2.setGeometry(QtCore.QRect(10, 470, 271, 41))
         self.pushButton_2.setStyleSheet("background-color: rgb(231, 231, 231);\n"
-"color: rgb(89, 89, 89);")
+                                        "color: rgb(89, 89, 89);")
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.frame)
         self.pushButton_3.setGeometry(QtCore.QRect(10, 520, 271, 41))
         self.pushButton_3.setStyleSheet("background-color: rgb(231, 231, 231);\n"
-"color: rgb(89, 89, 89);")
+                                        "color: rgb(89, 89, 89);")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.frame)
         self.pushButton_4.setGeometry(QtCore.QRect(10, 370, 271, 41))
         self.pushButton_4.setStyleSheet("background-color: rgb(231, 231, 231);\n"
-"color: rgb(89, 89, 89);")
+                                        "color: rgb(89, 89, 89);")
         self.pushButton_4.setObjectName("pushButton_4")
         self.label_22 = QtWidgets.QLabel(self.frame)
         self.label_22.setGeometry(QtCore.QRect(450, 90, 111, 41))
@@ -271,7 +271,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_22.setFont(font)
         self.label_22.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_22.setObjectName("label_22")
         self.label_25 = QtWidgets.QLabel(self.frame)
         self.label_25.setGeometry(QtCore.QRect(450, 30, 91, 41))
@@ -280,7 +280,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_25.setFont(font)
         self.label_25.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_25.setObjectName("label_25")
         self.label_26 = QtWidgets.QLabel(self.frame)
         self.label_26.setGeometry(QtCore.QRect(350, 30, 221, 41))
@@ -289,7 +289,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_26.setFont(font)
         self.label_26.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_26.setObjectName("label_26")
         self.label_27 = QtWidgets.QLabel(self.frame)
         self.label_27.setGeometry(QtCore.QRect(350, 90, 81, 41))
@@ -298,7 +298,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_27.setFont(font)
         self.label_27.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_27.setObjectName("label_27")
         self.label_28 = QtWidgets.QLabel(self.frame)
         self.label_28.setGeometry(QtCore.QRect(450, 60, 131, 41))
@@ -307,7 +307,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_28.setFont(font)
         self.label_28.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_28.setObjectName("label_28")
         self.label_29 = QtWidgets.QLabel(self.frame)
         self.label_29.setGeometry(QtCore.QRect(350, 60, 221, 41))
@@ -316,7 +316,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_29.setFont(font)
         self.label_29.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font-weight: 700;")
+                                    "font-weight: 700;")
         self.label_29.setObjectName("label_29")
         self.verticalLayout.addWidget(self.frame)
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.centralWidget)
@@ -340,7 +340,7 @@ class Ui_BaseScreen(object):
         self.pushButton_9 = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton_9.setGeometry(QtCore.QRect(0, 630, 261, 41))
         self.pushButton_9.setStyleSheet("background-color: rgb(186, 189, 182);\n"
-"background-color: rgb(243, 243, 243);")
+                                        "background-color: rgb(243, 243, 243);")
         self.pushButton_9.setObjectName("pushButton_9")
         self.formLayoutWidget = QtWidgets.QWidget(self.groupBox_2)
         self.formLayoutWidget.setGeometry(QtCore.QRect(20, 60, 221, 411))
@@ -382,6 +382,9 @@ class Ui_BaseScreen(object):
         self.label_43.setStyleSheet("")
         self.label_43.setObjectName("label_43")
         self.formLayout_2.setWidget(7, QtWidgets.QFormLayout.LabelRole, self.label_43)
+        self.listWidget = QtWidgets.QListWidget(self.formLayoutWidget)
+        self.listWidget.setObjectName("listWidget")
+        self.formLayout_2.setWidget(8, QtWidgets.QFormLayout.SpanningRole, self.listWidget)
         self.checkBox_15 = QtWidgets.QCheckBox(self.formLayoutWidget)
         self.checkBox_15.setObjectName("checkBox_15")
         self.formLayout_2.setWidget(8, QtWidgets.QFormLayout.LabelRole, self.checkBox_15)
@@ -394,8 +397,8 @@ class Ui_BaseScreen(object):
         self.filterButton = QtWidgets.QPushButton(self.groupBox_2)
         self.filterButton.setGeometry(QtCore.QRect(20, 430, 221, 41))
         self.filterButton.setStyleSheet("background-color: rgb(136, 138, 133);\n"
-"background-color: rgb(211, 215, 207);\n"
-"")
+                                        "background-color: rgb(211, 215, 207);\n"
+                                        "")
         self.filterButton.setObjectName("filterButton")
         self.verticalLayout_2.addWidget(self.groupBox_2)
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(self.centralWidget)
@@ -453,7 +456,6 @@ class Ui_BaseScreen(object):
         self.tableWidget.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
         self.tableWidget.setShowGrid(True)
         self.tableWidget.setGridStyle(QtCore.Qt.DashLine)
-        self.tableWidget.setRowCount(12)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(7)
         item = QtWidgets.QTableWidgetItem()
@@ -493,7 +495,7 @@ class Ui_BaseScreen(object):
         font.setWeight(87)
         self.label_30.setFont(font)
         self.label_30.setStyleSheet("color: rgb(239, 41, 41);\n"
-"font-weight:700;")
+                                    "font-weight:700;")
         self.label_30.setObjectName("label_30")
         self.label_31 = QtWidgets.QLabel(self.frame_41)
         self.label_31.setGeometry(QtCore.QRect(10, 40, 161, 41))
@@ -559,22 +561,22 @@ class Ui_BaseScreen(object):
         self.pushButton_8 = QtWidgets.QPushButton(self.frame_41)
         self.pushButton_8.setGeometry(QtCore.QRect(420, 160, 271, 41))
         self.pushButton_8.setStyleSheet("background-color: rgb(92, 53, 102);\n"
-"color: rgb(238, 238, 236);")
+                                        "color: rgb(238, 238, 236);")
         self.pushButton_8.setObjectName("pushButton_8")
         self.rkhunterButton = QtWidgets.QPushButton(self.frame_41)
         self.rkhunterButton.setGeometry(QtCore.QRect(420, 10, 271, 41))
         self.rkhunterButton.setStyleSheet("background-color: rgb(92, 53, 102);\n"
-"color: rgb(238, 238, 236);")
+                                          "color: rgb(238, 238, 236);")
         self.rkhunterButton.setObjectName("rkhunterButton")
         self.advancedScanButton = QtWidgets.QPushButton(self.frame_41)
         self.advancedScanButton.setGeometry(QtCore.QRect(420, 110, 271, 41))
         self.advancedScanButton.setStyleSheet("background-color: rgb(92, 53, 102);\n"
-"color: rgb(238, 238, 236);")
+                                              "color: rgb(238, 238, 236);")
         self.advancedScanButton.setObjectName("advancedScanButton")
         self.blockedIPButton = QtWidgets.QPushButton(self.frame_41)
         self.blockedIPButton.setGeometry(QtCore.QRect(420, 60, 271, 41))
         self.blockedIPButton.setStyleSheet("background-color: rgb(92, 53, 102);\n"
-"color: rgb(238, 238, 236);")
+                                           "color: rgb(238, 238, 236);")
         self.blockedIPButton.setObjectName("blockedIPButton")
         BaseScreen.setCentralWidget(self.centralWidget)
         self.menuBar = QtWidgets.QMenuBar(BaseScreen)
@@ -638,8 +640,6 @@ class Ui_BaseScreen(object):
         self.plainTextEdit.setPlainText(_translate("BaseScreen", "Search For Text"))
         self.filterButton.setText(_translate("BaseScreen", "Filter Remote Connections"))
         self.label_2.setText(_translate("BaseScreen", "SENTINEL - ADVANCED PROCESS LOOKUP AND ROOTKIT DETECTION"))
-        item = self.tableWidget.verticalHeaderItem(0)
-        item.setText(_translate("BaseScreen", "Row 1"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("BaseScreen", "PID"))
         item = self.tableWidget.horizontalHeaderItem(1)
@@ -671,57 +671,63 @@ class Ui_BaseScreen(object):
         self.advancedScanButton.setText(_translate("BaseScreen", "Get Advance Scan Reports"))
         self.blockedIPButton.setText(_translate("BaseScreen", "Manage Blocked IPs"))
 
-
-
-    def retranslateTable(self,BaseScreen):
+    def retranslateTable(self, BaseScreen):
         print(self.output)
         _translate = QtCore.QCoreApplication.translate
-        for i in range(len(self.output['processes'])):
-                item = QtWidgets.QTableWidgetItem()
-                brush = QtGui.QBrush(QtGui.QColor(186, 189, 182))
-                brush.setStyle(QtCore.Qt.NoBrush)
-                item.setBackground(brush)
-                brush = QtGui.QBrush(QtGui.QColor(46, 52, 54))
-                brush.setStyle(QtCore.Qt.NoBrush)
-                item.setForeground(brush)
-                item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsEnabled)
-                self.tableWidget.setItem(i, 0, item)
-                item = QtWidgets.QTableWidgetItem()
-                self.tableWidget.setItem(i, 1, item)
-                item = QtWidgets.QTableWidgetItem()
-                self.tableWidget.setItem(i, 2, item)
-                item = QtWidgets.QTableWidgetItem()
-                self.tableWidget.setItem(i, 3, item)
-                item = QtWidgets.QTableWidgetItem()
-                self.tableWidget.setItem(i, 4, item)
-                item = QtWidgets.QTableWidgetItem()
-                self.tableWidget.setItem(i, 5, item)
-                item = QtWidgets.QTableWidgetItem()
-                self.tableWidget.setItem(i, 6, item)
-        
-                item = self.tableWidget.item(i, 0)
-                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["PID"]) if len(self.output["processes"][i]["PID"]) else "Not Found"))
-                item = self.tableWidget.item(i, 1)
-                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["User"]) if len(self.output["processes"][i]["User"]) else "Not Found"))
-                item = self.tableWidget.item(i, 2)
-                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["Pname"]) if len(self.output["processes"][i]["Pname"]) else "Not Found"))
-                item = self.tableWidget.item(i, 3)
-                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["localAddr"][1]) if len(self.output["processes"][i]["localAddr"]) else "Not Found"))
-                item = self.tableWidget.item(i, 4)
-                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["localAddr"][0]) if len(self.output["processes"][i]["localAddr"]) else "Not Found"))
-                item = self.tableWidget.item(i, 5)
-                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["remoteAddr"][0]) if len(self.output["processes"][i]["remoteAddr"]) else "Not Found"))
-                item = self.tableWidget.item(i, 6)
-                item.setText(_translate("BaseScreen", str(self.output["processes"][i]["country"]) if len(self.output["processes"][i]["country"]) else "Not Found"))
+        self.tableWidget.setRowCount(len(self.output['processes']))
 
+        for i in range(min(len(self.output['processes']), 22)):
+            item = QtWidgets.QTableWidgetItem()
+            brush = QtGui.QBrush(QtGui.QColor(186, 189, 182))
+            brush.setStyle(QtCore.Qt.NoBrush)
+            item.setBackground(brush)
+            brush = QtGui.QBrush(QtGui.QColor(46, 52, 54))
+            brush.setStyle(QtCore.Qt.NoBrush)
+            item.setForeground(brush)
+            item.setFlags(QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled)
+            self.tableWidget.setItem(i, 0, item)
+            item = QtWidgets.QTableWidgetItem()
+            self.tableWidget.setItem(i, 1, item)
+            item = QtWidgets.QTableWidgetItem()
+            self.tableWidget.setItem(i, 2, item)
+            item = QtWidgets.QTableWidgetItem()
+            self.tableWidget.setItem(i, 3, item)
+            item = QtWidgets.QTableWidgetItem()
+            self.tableWidget.setItem(i, 4, item)
+            item = QtWidgets.QTableWidgetItem()
+            self.tableWidget.setItem(i, 5, item)
+            item = QtWidgets.QTableWidgetItem()
+            self.tableWidget.setItem(i, 6, item)
+
+            item = self.tableWidget.item(i, 0)
+            item.setText(_translate("BaseScreen", str(self.output["processes"][i]["PID"]) if len(
+                self.output["processes"][i]["PID"]) else "Not Found"))
+            item = self.tableWidget.item(i, 1)
+            item.setText(_translate("BaseScreen", str(self.output["processes"][i]["User"]) if len(
+                self.output["processes"][i]["User"]) else "Not Found"))
+            item = self.tableWidget.item(i, 2)
+            item.setText(_translate("BaseScreen", str(self.output["processes"][i]["Pname"]) if len(
+                self.output["processes"][i]["Pname"]) else "Not Found"))
+            item = self.tableWidget.item(i, 3)
+            item.setText(_translate("BaseScreen", str(self.output["processes"][i]["localAddr"][1]) if len(
+                self.output["processes"][i]["localAddr"]) else "Not Found"))
+            item = self.tableWidget.item(i, 4)
+            item.setText(_translate("BaseScreen", str(self.output["processes"][i]["localAddr"][0]) if len(
+                self.output["processes"][i]["localAddr"]) else "Not Found"))
+            item = self.tableWidget.item(i, 5)
+            item.setText(_translate("BaseScreen", str(self.output["processes"][i]["remoteAddr"][0]) if len(
+                self.output["processes"][i]["remoteAddr"]) else "Not Found"))
+            item = self.tableWidget.item(i, 6)
+            item.setText(_translate("BaseScreen", str(self.output["processes"][i]["country"]) if len(
+                self.output["processes"][i]["country"]) else "Not Found"))
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     BaseScreen = QtWidgets.QMainWindow()
     ui = Ui_BaseScreen()
     ui.setupUi(BaseScreen)
     BaseScreen.show()
     sys.exit(app.exec_())
-
