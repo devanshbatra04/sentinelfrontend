@@ -10,6 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_BaseScreen(object):
     def setupUi(self, BaseScreen):
+        BaseScreen.showMaximized()
         BaseScreen.setObjectName("BaseScreen")
         BaseScreen.resize(1287, 771)
         BaseScreen.setStyleSheet("background-color: rgb(242, 242, 242);")
