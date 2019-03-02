@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import requests
-URL = "localhost:5000"
+URL = "172.20.239.197:5000"
 
 class quickScanWindow(object):
     def setupUi(self, MainWindow, data):

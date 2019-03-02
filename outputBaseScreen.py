@@ -9,12 +9,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import json, urllib.request
 import requests
-
+import VTscan
 
 class Ui_BaseScreen(object):
     def setupUi(self, BaseScreen):
         BaseScreen.setObjectName("BaseScreen")
-        self.output = requests.post('http://127.0.0.1:5000/getProcesses').json()
+        self.output = requests.post('http://localhost:5000/getProcesses').json()
+        # print(requests.post('http://localhost:5000/getSystemUsage'))
+        self.systemUsage = requests.post('http://localhost:5000/getSystemUsage').json()
         BaseScreen.resize(1290, 775)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -459,6 +461,8 @@ class Ui_BaseScreen(object):
         self.tableWidget.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContentsOnFirstShow)
         self.tableWidget.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tableWidget.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+
+        self.tableWidget.clicked.connect(self.on_click)
         self.tableWidget.setShowGrid(True)
         self.tableWidget.setGridStyle(QtCore.Qt.DashLine)
         self.tableWidget.setObjectName("tableWidget")
@@ -544,13 +548,13 @@ class Ui_BaseScreen(object):
         self.totalDiskUsage.setFont(font)
         self.totalDiskUsage.setStyleSheet("color: rgb(68, 68, 68);")
         self.totalDiskUsage.setObjectName("totalDiskUsage")
-        self.totalRemoteConnections = QtWidgets.QLabel(self.frame_41)
-        self.totalRemoteConnections.setGeometry(QtCore.QRect(220, 100, 61, 41))
+        self.totalCpuUsage = QtWidgets.QLabel(self.frame_41)
+        self.totalCpuUsage.setGeometry(QtCore.QRect(220, 100, 61, 41))
         font = QtGui.QFont()
         font.setPointSize(10)
-        self.totalRemoteConnections.setFont(font)
-        self.totalRemoteConnections.setStyleSheet("color: rgb(68, 68, 68);")
-        self.totalRemoteConnections.setObjectName("totalRemoteConnections")
+        self.totalCpuUsage.setFont(font)
+        self.totalCpuUsage.setStyleSheet("color: rgb(68, 68, 68);")
+        self.totalCpuUsage.setObjectName("totalRemoteConnections")
         self.totalNetworkUsage = QtWidgets.QLabel(self.frame_41)
         self.totalNetworkUsage.setGeometry(QtCore.QRect(220, 130, 81, 41))
         font = QtGui.QFont()
@@ -625,6 +629,7 @@ class Ui_BaseScreen(object):
         self.pushButton_2.setText(_translate("BaseScreen", "Kill Process"))
         self.pushButton_3.setText(_translate("BaseScreen", "Blacklist IP"))
         self.pushButton_4.setText(_translate("BaseScreen", "Quick Scan With Virustotal"))
+        self.pushButton_4.clicked.connect(self.quickScanClick)
         self.label_22.setText(_translate("BaseScreen", "Wed 9:30 AM"))
         self.label_25.setText(_translate("BaseScreen", "Kakarot.py"))
         self.label_26.setText(_translate("BaseScreen", "Name:"))
@@ -664,12 +669,13 @@ class Ui_BaseScreen(object):
         self.tableWidget.setSortingEnabled(__sortingEnabled)
         self.label_30.setText(_translate("BaseScreen", "Overview"))
         self.label_31.setText(_translate("BaseScreen", "Number of Processes:"))
-        self.label_32.setText(_translate("BaseScreen", "Total Disk Usage:"))
-        self.label_33.setText(_translate("BaseScreen", "Number of Remote Connections:"))
-        self.label_34.setText(_translate("BaseScreen", "Total Network Usage:"))
-        self.totalProcesses.setText(_translate("BaseScreen", "124"))
-        self.totalDiskUsage.setText(_translate("BaseScreen", "1200 MiB/s"))
-        self.totalRemoteConnections.setText(_translate("BaseScreen", "50"))
+        self.label_32.setText(_translate("BaseScreen", "Total CPU Usage:"))
+        self.label_33.setText(_translate("BaseScreen", "Total Disk Usage:"))
+        self.label_34.setText(_translate("BaseScreen", "Number of Remote Connections:"))
+        #self.label_34.setText(_translate("BaseScreen", "Total Network Usage:"))
+        self.totalProcesses.setText(_translate("BaseScreen", self.systemUsage['num_process']))
+        self.totalCpuUsage.setText(_translate("BaseScreen", self.systemUsage['cpu_usage']))
+        self.totalDiskUsage.setText(_translate("BaseScreen", self.systemUsage['memory_usage']))
         self.totalNetworkUsage.setText(_translate("BaseScreen", "12 MiB/s"))
         self.pushButton_8.setText(_translate("BaseScreen", "Refresh"))
         self.rkhunterButton.setText(_translate("BaseScreen", "Run RKHunter"))
@@ -748,9 +754,27 @@ class Ui_BaseScreen(object):
                 self.output["processes"][i]["country"]) else "Not Found"))
 
 
+    def on_click(self):
+        print("\n")
+
+        self.selectedRow = self.tableWidget.selectedItems()[0].row()
+
+
+    def quickScanClick(self):
+        self.clickedProcess = str(self.output['processes'][self.selectedRow - 1]["PID"])
+        import os
+        print('python ' + 'VTscan.py' + ' ' + (self.clickedProcess) + ' & disown')
+        os.system('python ' + 'VTscan.py' + ' ' + (self.clickedProcess) + ' & disown')
+
+    def blockIP(self):
+        dIP = self.output['processes'][self.selectedRow - 1]["PID"]
+        # self.output = requests.post('http://' + URL + '/lookupProcess', {'PID': self.data}).json()
+
+
+
 if __name__ == "__main__":
     import sys
-
+    print("fnfnf")
     app = QtWidgets.QApplication(sys.argv)
     BaseScreen = QtWidgets.QMainWindow()
     ui = Ui_BaseScreen()

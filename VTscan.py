@@ -8,30 +8,33 @@
 import requests
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import *
 # from quickScanResult import quickScanWindow
-URL = "172.20.239.197:5000"
+URL = "localhost:5000"
 class Ui_MainWindow(object):
     def creatingTables(self):
         self.tableWidget = QTableWidget(self.centralwidget)
         self.tableWidget.setEnabled(True)
-        self.tableWidget.setGeometry(QtCore.QRect(10, 100, 621, 271))
-        self.tableWidget.setRowCount(len(self.output['files']))
-        self.tableWidget.setColumnCount(4)
+        self.tableWidget.setGeometry(QtCore.QRect(10, 100, 1290, 400))
+        self.tableWidget.setRowCount(len(self.output['results']))
+        self.tableWidget.setColumnCount(5)
+
         header = self.tableWidget.horizontalHeader()
-        self.tableWidget.setHorizontalHeaderLabels(["File Path", "File Hash", "Scan Time", "User Name"])
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
-        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+        self.tableWidget.setHorizontalHeaderLabels(["File Path", "Message", "Positives",  "Total Scans", "Scan Time"])
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
         header.setSectionResizeMode(3, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(4, QtWidgets.QHeaderView.ResizeToContents)
 
         count = 0
-        for item in self.output['files']:
+        for item in self.fileArray:
             print(item["file"])
             self.tableWidget.setItem(count, 0, QTableWidgetItem(item["file"]))
-            self.tableWidget.setItem(count, 1, QTableWidgetItem(item["hash"]))
-            self.tableWidget.setItem(count, 2, QTableWidgetItem(item["time"]))
-            self.tableWidget.setItem(count, 3, QTableWidgetItem(item["user"]))
+            self.tableWidget.setItem(count, 1, QTableWidgetItem(item["message"]))
+            self.tableWidget.setItem(count, 2, QTableWidgetItem(str(item["positives"])))
+            self.tableWidget.setItem(count, 3, QTableWidgetItem(str(item["total scans"])))
+            self.tableWidget.setItem(count, 4, QTableWidgetItem(str(item["scan date"])))
             count = count + 1
 
         self.tableWidget.setSelectionBehavior(QTableWidget.SelectRows)
@@ -39,11 +42,14 @@ class Ui_MainWindow(object):
         self.tableWidget.setEditTriggers(QTableWidget.NoEditTriggers)
 
 
-    def setupUi(self, MainWindow):
+    def setupUi(self, MainWindow, data):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(640, 480)
-        self.output = requests.post('http://%s/getScheduledFiles' % URL).json()
-        # print(self.output)
+        MainWindow.resize(1290, 640)
+        self.data = data
+        self.output = requests.post('http://'+URL+'/lookupProcess', {'PID': self.data}).json()
+        print(self.output)
+        self.fileArray = self.output["results"]
+        print(self.fileArray)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         # self.tableView = QtWidgets.QTableView(self.centralwidget)
@@ -55,7 +61,7 @@ class Ui_MainWindow(object):
         # self.tableView.setObjectName("tableView")
         self.creatingTables()
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(10, 390, 201, 41))
+        self.pushButton.setGeometry(QtCore.QRect(10, 550, 201, 41))
         self.pushButton.setObjectName("pushButton")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(10, 10, 121, 81))
@@ -65,6 +71,10 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(180, 20, 291, 61))
+        self.messageLabel = QLabel(self.centralwidget)
+        self.messageLabel.move(350, 650)
+        self.messageLabel.setText("File uploaded in scheduled Files Directory")
+        self.messageLabel.hide()
         font = QtGui.QFont()
         font.setFamily("DejaVu Sans Mono")
         font.setPointSize(24)
@@ -73,11 +83,33 @@ class Ui_MainWindow(object):
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(220, 390, 201, 41))
+        self.pushButton_2.setGeometry(QtCore.QRect(400, 550, 201, 41))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_3.setGeometry(QtCore.QRect(430, 390, 201, 41))
+        self.pushButton_3.setGeometry(QtCore.QRect(870, 550, 201, 41))
         self.pushButton_3.setObjectName("pushButton_3")
+
+
+
+        # hBox = QHBoxLayout()
+        # hBox.addWidget(self.pushButton)
+        # hBox.addWidget(self.pushButton_2)
+        # hBox.addWidget(self.pushButton_3)
+        #
+        # bottom = QFrame()
+        # bottom.setFrameShape(QFrame.StyledPanel)
+        #
+        # bottom.setLayout(hBox)
+        #
+        # vBox = QVBoxLayout()
+        # vBox.addWidget(self.tableWidget)
+        # vBox.addWidget(bottom)
+        #
+        # self.setLayout(vBox)
+
+
+
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 640, 22))
@@ -86,6 +118,7 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -96,38 +129,45 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "Quick Scan"))
-        self.pushButton.clicked.connect(self.quickScanClick)
-        self.label_2.setText(_translate("MainWindow", "Scheduled Files"))
+        self.pushButton.setText(_translate("MainWindow", "Advanced Scan"))
+        self.pushButton.clicked.connect(self.advancedScanClick)
+        self.label_2.setText(_translate("MainWindow", "Quick Scan"))
         self.pushButton_2.setText(_translate("MainWindow", "Refresh"))
         self.pushButton_2.clicked.connect(self.refresh)
         self.pushButton_3.setText(_translate("MainWindow", "Delete File"))
 
-    def quickScanClick(self):
+    def advancedScanClick(self):
         row = self.tableWidget.currentRow()
         firstColumnInRow = self.tableWidget.item(row, 0)
         print(firstColumnInRow)
-        import os
-        os.system('python ' + 'quickScanResult.py' + ' ' + firstColumnInRow.text() + ' & disown')
+
+        self.messageLabel.show()
+
+        requests.post('http://' + URL + '/advancedScan', {'filepath': firstColumnInRow})
+        # import os
+        # os.system('python ' + 'quickScanResult.py' + ' ' + firstColumnInRow.text() + ' & disown')
 
     def refresh(self):
         self.tableWidget.setRowCount(0)
-        self.output = requests.post('http://%s/getScheduledFiles' % URL).json()
-        self.tableWidget.setRowCount(len(self.output['files']))
+        self.output = requests.post('http://' + URL + '/lookupProcess', {'PID': self.data}).json()
+        # print(self.output)
+        self.fileArray = self.output["results"]
+        self.tableWidget.setRowCount(len(self.output['results']))
         count = 0
-        for item in self.output['files']:
+        for item in self.fileArray:
             self.tableWidget.setItem(count, 0, QTableWidgetItem(item["file"]))
-            self.tableWidget.setItem(count, 1, QTableWidgetItem(item["hash"]))
-            self.tableWidget.setItem(count, 2, QTableWidgetItem(item["time"]))
-            self.tableWidget.setItem(count, 3, QTableWidgetItem(item["user"]))
+            self.tableWidget.setItem(count, 1, QTableWidgetItem(item["message"]))
+            self.tableWidget.setItem(count, 2, QTableWidgetItem(item["positives"]))
+            self.tableWidget.setItem(count, 3, QTableWidgetItem(item["total scans"]))
+            self.tableWidget.setItem(count, 4, QTableWidgetItem(item["scan date"]))
             count = count + 1
 
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(['reports.py'])
+    app = QtWidgets.QApplication(['VTscan.py'])
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    ui.setupUi(MainWindow, sys.argv[1])
     # ui.setupUi(MainWindow, "./backchodi.file")
     MainWindow.show()
     sys.exit(app.exec_())
