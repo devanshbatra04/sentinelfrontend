@@ -10,7 +10,7 @@ import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
 # from quickScanResult import quickScanWindow
-URL = "172.20.239.197:5000"
+URL = "localhost:5000"
 class Ui_MainWindow(object):
     def creatingTables(self):
         self.tableWidget = QTableWidget(self.centralwidget)

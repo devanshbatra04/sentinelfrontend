@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import *
 import json, urllib.request
 import requests
 import VTscan
@@ -14,6 +15,7 @@ import VTscan
 class Ui_BaseScreen(object):
     def setupUi(self, BaseScreen):
         BaseScreen.setObjectName("BaseScreen")
+        self.URL = "localhost"
         self.output = requests.post('http://localhost:5000/getProcesses').json()
         # print(requests.post('http://localhost:5000/getSystemUsage'))
         self.systemUsage = requests.post('http://localhost:5000/getSystemUsage').json()
@@ -598,7 +600,7 @@ class Ui_BaseScreen(object):
         self.statusBar = QtWidgets.QStatusBar(BaseScreen)
         self.statusBar.setObjectName("statusBar")
         BaseScreen.setStatusBar(self.statusBar)
-
+        self.selectedRow = 0
         self.retranslateUi(BaseScreen)
         QtCore.QMetaObject.connectSlotsByName(BaseScreen)
 
@@ -625,9 +627,11 @@ class Ui_BaseScreen(object):
         self.label_21.setText(_translate("BaseScreen", "CPU:"))
         self.label_23.setText(_translate("BaseScreen", "Network:"))
         self.processNetwork.setText(_translate("BaseScreen", "120 MB"))
-        self.pushButton.setText(_translate("BaseScreen", "Mark As Safe"))
+        self.pushButton.setText(_translate("BaseScreen", "IP Scan"))
         self.pushButton_2.setText(_translate("BaseScreen", "Kill Process"))
+        self.pushButton_2.clicked.connect(self.killProcess)
         self.pushButton_3.setText(_translate("BaseScreen", "Blacklist IP"))
+        self.pushButton_3.clicked.connect(self.blockIP)
         self.pushButton_4.setText(_translate("BaseScreen", "Quick Scan With Virustotal"))
         self.pushButton_4.clicked.connect(self.quickScanClick)
         self.label_22.setText(_translate("BaseScreen", "Wed 9:30 AM"))
@@ -767,10 +771,56 @@ class Ui_BaseScreen(object):
         os.system('python ' + 'VTscan.py' + ' ' + (self.clickedProcess) + ' & disown')
 
     def blockIP(self):
-        dIP = self.output['processes'][self.selectedRow - 1]["PID"]
+        dIP = str(self.output["processes"][self.selectedRow - 1]["remoteAddr"][0])
+        dPort = str(self.output["processes"][self.selectedRow - 1]["remoteAddr"][1])
+        response = requests.post('http://' + self.URL + ':5000/blockIP', {'IP': dIP, 'port': dPort})
+        print(response)
+        # message = QMessageBox.question(self, "Your Concern", "Do you want to Block Ip "+dIP+" ?",
+        #                                QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
+        # if message == QMessageBox.Yes:
+        #     response = requests.post('http://' + self.URL + ':5000/blockIP', {'IP': dIP, 'port': dPort})
+        #     QMessageBox.about(self, "Confirmed", "IP BLocked")
+        #     print(response)
+        # else:
+        #     print("No no")
+
+
         # self.output = requests.post('http://' + URL + '/lookupProcess', {'PID': self.data}).json()
 
+    def QuestionMessage(self, msg):
 
+        def do():
+            message = QMessageBox.question(self, "Your Concern", msg + "?",
+                                           QMessageBox.Yes|QMessageBox.No, QMessageBox.Yes)
+            if message == QMessageBox.Yes:
+                print("Blocked/Delete")
+            else:
+                print("No no")
+
+        return do
+
+    def infoMessage(self, msg):
+
+        def do():
+            QMessageBox.about(self, "Confirmed", msg)
+        return do
+
+    def killProcess(self):
+        pid = str(self.output['processes'][self.selectedRow - 1]["PID"])
+        # message = QMessageBox.question(self, "Your Concern", "Do you want to kill Process with process Id = "+pid + " ?",
+        #                                QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
+        #
+        # if message == QMessageBox.Yes:
+        print("Blocked/Delete")
+        requests.post('http://' + self.URL + ':5000/killProcess', {'PID': pid})
+            # QMessageBox.about(self, "Confirmed", "Process Kiled")
+
+        # else:
+        #     print("No no")
+
+    def getAdvancedScanReports(self):
+        import os
+        os.system('python ' + 'reports.py' + ' & disown')
 
 if __name__ == "__main__":
     import sys
