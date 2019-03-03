@@ -875,7 +875,7 @@ class Ui_BaseScreen(object):
     def runChk(self):
         str = requests.post("http://"+self.URL+":5000/chkrScan")
         import os
-        os.system('python ' + 'chkOut.py' + ' & disown')
+        os.system('python ' + 'chkScan.py' + ' & disown')
 
 
 if __name__ == "__main__":

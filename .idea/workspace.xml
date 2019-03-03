@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7eb88cd-6d78-4ecc-91bf-2e8f3257cc12" name="Default Changelist" comment="" />
+    <list default="true" id="d7eb88cd-6d78-4ecc-91bf-2e8f3257cc12" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chkOut.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chkScan.py" beforeDir="false" afterPath="$PROJECT_DIR$/chkScan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputBaseScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/outputBaseScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suspectedFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/suspectedFiles.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,10 +19,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/outputBaseScreen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="797" column="27" selection-start-line="801" selection-start-column="8" selection-end-line="801" selection-end-column="86" />
+            <state relative-caret-position="195">
+              <caret line="883" column="40" lean-forward="true" selection-start-line="883" selection-start-column="40" selection-end-line="883" selection-end-column="40" />
               <folding>
                 <element signature="e#199#241#0" expanded="true" />
+                <element signature="e#41086#41354#0" />
                 <element signature="e#41387#42275#0" />
                 <element signature="e#42322#42650#0" />
                 <element signature="e#42693#42774#0" />
@@ -31,36 +38,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chkOut.py">
+        <entry file="file://$PROJECT_DIR$/chkScan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-315">
-              <caret line="135" column="5" lean-forward="true" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+            <state relative-caret-position="385">
+              <caret line="103" column="50" lean-forward="true" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
               <folding>
-                <element signature="e#201#243#0" expanded="true" />
+                <element signature="e#0#34#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chkScan.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="123" lean-forward="true" selection-start-line="107" selection-start-column="8" selection-end-line="123" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/suspectedFiles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="105">
+              <caret line="130" column="55" lean-forward="true" selection-start-line="130" selection-start-column="55" selection-end-line="130" selection-end-column="55" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#194#209#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VTscan.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="43" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="43" />
+              <caret line="174" column="40" lean-forward="true" selection-start-line="174" selection-start-column="40" selection-end-line="174" selection-end-column="40" />
               <folding>
                 <element signature="e#194#209#0" expanded="true" />
               </folding>
@@ -90,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reports.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" column="69" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="23" selection-end-column="69" />
+            <state relative-caret-position="225">
+              <caret line="132" column="25" lean-forward="true" selection-start-line="125" selection-end-line="132" selection-end-column="25" />
               <folding>
                 <element signature="e#194#209#0" expanded="true" />
               </folding>
@@ -110,7 +105,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selected</find>
       <find>os</find>
       <find>selectedRow</find>
       <find>processDisk</find>
@@ -137,13 +131,14 @@
       <find>rk</find>
       <find>chkR</find>
       <find>retranslateT</find>
-      <find>print</find>
       <find>label_30</find>
+      <find>print</find>
+      <find>quic</find>
       <find>impo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -153,10 +148,10 @@
         <option value="$PROJECT_DIR$/reports.py" />
         <option value="$PROJECT_DIR$/blockIPlist.py" />
         <option value="$PROJECT_DIR$/VTscan.py" />
-        <option value="$PROJECT_DIR$/outputBaseScreen.py" />
         <option value="$PROJECT_DIR$/chkOut.py" />
-        <option value="$PROJECT_DIR$/chkScan.py" />
         <option value="$PROJECT_DIR$/suspectedFiles.py" />
+        <option value="$PROJECT_DIR$/outputBaseScreen.py" />
+        <option value="$PROJECT_DIR$/chkScan.py" />
       </list>
     </option>
   </component>
@@ -204,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.suspectedFiles">
+  <component name="RunManager" selected="Python.outputBaseScreen (1)">
     <configuration name="VTscan" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sentinelfrontend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -312,8 +307,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.suspectedFiles" />
         <item itemvalue="Python.outputBaseScreen (1)" />
+        <item itemvalue="Python.suspectedFiles" />
         <item itemvalue="Python.chkScan" />
         <item itemvalue="Python.chkOut" />
         <item itemvalue="Python.VTscan" />
@@ -344,19 +339,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="700" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1787044" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32924694" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4996277" weight="0.30472854" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4996277" visible="true" weight="0.30472854" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39929947" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924694" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32924694" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3625219" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3625219" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003723" side_tool="true" weight="0.30472854" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32924694" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -398,30 +394,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VTscan.py">
+    <entry file="file://$PROJECT_DIR$/blockIPlist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="43" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="43" />
-          <folding>
-            <element signature="e#194#209#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="101" column="17" lean-forward="true" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reports.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="69" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="23" selection-end-column="69" />
+        <state relative-caret-position="225">
+          <caret line="132" column="25" lean-forward="true" selection-start-line="125" selection-end-line="132" selection-end-column="25" />
           <folding>
             <element signature="e#194#209#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blockIPlist.py">
+    <entry file="file://$PROJECT_DIR$/suspectedFiles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="101" column="17" lean-forward="true" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+        <state relative-caret-position="105">
+          <caret line="130" column="55" lean-forward="true" selection-start-line="130" selection-start-column="55" selection-end-line="130" selection-end-column="55" />
+          <folding>
+            <element signature="e#194#209#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -437,10 +433,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/outputBaseScreen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="797" column="27" selection-start-line="801" selection-start-column="8" selection-end-line="801" selection-end-column="86" />
+        <state relative-caret-position="195">
+          <caret line="883" column="40" lean-forward="true" selection-start-line="883" selection-start-column="40" selection-end-line="883" selection-end-column="40" />
           <folding>
             <element signature="e#199#241#0" expanded="true" />
+            <element signature="e#41086#41354#0" />
             <element signature="e#41387#42275#0" />
             <element signature="e#42322#42650#0" />
             <element signature="e#42693#42774#0" />
@@ -455,20 +452,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chkScan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="123" lean-forward="true" selection-start-line="107" selection-start-column="8" selection-end-line="123" />
+        <state relative-caret-position="385">
+          <caret line="103" column="50" lean-forward="true" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suspectedFiles.py">
+    <entry file="file://$PROJECT_DIR$/VTscan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state relative-caret-position="120">
+          <caret line="174" column="40" lean-forward="true" selection-start-line="174" selection-start-column="40" selection-end-line="174" selection-end-column="40" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#194#209#0" expanded="true" />
           </folding>
         </state>
       </provider>

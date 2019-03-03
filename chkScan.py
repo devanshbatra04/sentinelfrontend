@@ -101,7 +101,7 @@ class Window(QWidget):
     def suspectedFiles(self):
 
         import os
-        os.system('python ' + 'VTscan.py' + ' ' +  + ' & disown')
+        os.system('python ' + 'suspectedFiles.py' + ' & disown')
 
         self.files = requests.post("http://" + self.URL + ":5000/getSuspectFiles").json()['files']
 
